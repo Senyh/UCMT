@@ -1,3 +1,3 @@
 # UCMT
 
-## Code will be made publicly available after publication.
+## Code will be made publicly available upon publication of the paper 
