@@ -5,7 +5,7 @@ This repo is the PyTorch implementation of our paper:
 **["Co-training with High-Confidence Pseudo Labels for Semi-supervised Medical Image Segmentation"](https://arxiv.org/abs/2301.04465)** 
 
 <!-- ![framework](docs/UCMT.png) -->
-<img src=docs/UCMT.png width=80% />
+<img src=docs/UCMT.png width=75% />
 
 **U**ncertainty-guided **C**ollaborative **M**ean-**T**eacher (UCMT)
 
