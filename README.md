@@ -1,6 +1,5 @@
 # [IJCAI 2023] UCMT
 
-
 This repo is the PyTorch implementation of our paper:
 
 **["Co-training with High-Confidence Pseudo Labels for Semi-supervised Medical Image Segmentation"](https://arxiv.org/abs/2301.04465)** 
