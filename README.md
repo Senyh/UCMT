@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 # UCMT
 
 ## Code will be made publicly available upon publication of the paper.
-=======
+
 # [IJCAI 2023] UCMT
 
 
@@ -87,4 +86,3 @@ If you have any questions or suggestions, please feel free to contact me ([xxszq
 * [TorchSemiSeg](https://github.com/charlesCXK/TorchSemiSeg) 
 * [UA-MT](https://github.com/yulequan/UA-MT)
 * [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)
->>>>>>> b392351 (UCMT)
