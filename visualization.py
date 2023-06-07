@@ -63,10 +63,6 @@ def vis(is_debug=True):
     else:
         pbar = range(iters)
     # Load model
-    if args.backbone == 'Deeplabv3p':
-        from models.deeplabv3 import DeepLabv3p as DeepLabv3
-    else:
-        from models.UNet import UNet as DeepLabv3
     weights_path = project_path + 'weights/' + args.model_weights
     model = load_model(model_weights=weights_path, in_channels=args.in_channels, num_classes=args.num_classes, backbone=args.backbone)
     model.eval()
