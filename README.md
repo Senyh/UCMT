@@ -46,7 +46,7 @@ DATA/
 ### 2. Training
 #### 2.1 Adopting DeepLabv3Plus as backbone:
 ```angular2html
-python train.py --backbone Deeplabv3p
+python train.py --backbone DeepLabv3p
 ```
 #### 2.2 Adopting U-Net as backbone:
 ```angular2html
