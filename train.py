@@ -37,7 +37,7 @@ def get_args(known=False):
     parser.add_argument('--backbone', type=str, default='DeepLabv3p', choices=['DeepLabv3p', 'UNet'], help='segmentation backbone')
     parser.add_argument('--data_path', type=str, default='YOUR_DATA_PATH', help='path to the data')
     parser.add_argument('--image_size', type=int, default=256, help='the size of images for training and testing')
-    parser.add_argument('--labeled_percentage', type=int, default=0.05, help='the percentage of labeled data')
+    parser.add_argument('--labeled_percentage', type=float, default=0.05, help='the percentage of labeled data')
     parser.add_argument('--is_cutmix', type=bool, default=False, help='cut mix')
     parser.add_argument('--mix_prob', type=float, default=0.5, help='probability for amplitude mix')
     parser.add_argument('--topk', type=float, default=2, help='top k')
