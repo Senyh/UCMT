@@ -2,7 +2,7 @@
 
 This repo is the PyTorch implementation of our paper:
 
-**["Co-training with High-Confidence Pseudo Labels for Semi-supervised Medical Image Segmentation"](https://arxiv.org/abs/2301.04465)** 
+**["Co-training with High-Confidence Pseudo Labels for Semi-supervised Medical Image Segmentation"](https://www.ijcai.org/proceedings/2023/467)** 
 
 <!-- ![framework](docs/UCMT.png) -->
 <img src=docs/UCMT.png width=75% />
@@ -67,11 +67,19 @@ python visualization.py
 ## Citation
 If you find this project useful, please consider citing:
 ```
-@article{shen2023co,
-  title={Co-training with High-Confidence Pseudo Labels for Semi-supervised Medical Image Segmentation},
-  author={Shen, Zhiqiang and Cao, Peng and Yang, Hua and Liu, Xiaoli and Yang, Jinzhu and Zaiane, Osmar R},
-  journal={arXiv preprint arXiv:2301.04465},
-  year={2023}
+@inproceedings{ijcai2023p467,
+  title     = {Co-training with High-Confidence Pseudo Labels for Semi-supervised Medical Image Segmentation},
+  author    = {Shen, Zhiqiang and Cao, Peng and Yang, Hua and Liu, Xiaoli and Yang, Jinzhu and Zaiane, Osmar R.},
+  booktitle = {Proceedings of the Thirty-Second International Joint Conference on
+               Artificial Intelligence, {IJCAI-23}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Edith Elkind},
+  pages     = {4199--4207},
+  year      = {2023},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2023/467},
+  url       = {https://doi.org/10.24963/ijcai.2023/467},
 }
 ```
 
