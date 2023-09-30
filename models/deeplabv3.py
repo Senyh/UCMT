@@ -86,7 +86,7 @@ class DownBlock(nn.Module):
 
 
 class UpBlock(nn.Module):
-    """Upssampling followed by ConvBlock"""
+    """Upsampling followed by ConvBlock"""
     def __init__(self, in_channels1, in_channels2, out_channels, dropout_p, mode_upsampling=1):
         super(UpBlock, self).__init__()
         self.mode_upsampling = mode_upsampling
