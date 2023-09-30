@@ -48,7 +48,7 @@ class BoxMaskGenerator(MaskGenerator):
             # Choose the proportion of each mask that should be above the threshold
             mask_props = rng.uniform(self.prop_range[0], self.prop_range[1], size=(n_masks, self.n_boxes))
 
-            # Zeros will cause NaNs, so detect and suppres them
+            # Zeros will cause NaNs, so detect and suppress them
             zero_mask = mask_props == 0.0
 
             if self.random_aspect_ratio:
