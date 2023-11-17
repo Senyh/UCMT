@@ -94,7 +94,7 @@ class BoxMaskGenerator(MaskGenerator):
         return t_params
 
 
-class AddMaskParamsToBatch (object):
+class AddMaskParamsToBatch(object):
     """
     We add the cut-and-paste parameters to the mini-batch within the collate function,
     (we pass it as the `batch_aug_fn` parameter to the `SegCollate` constructor)
@@ -104,7 +104,7 @@ class AddMaskParamsToBatch (object):
         self.mask_gen = mask_gen
 
     def __call__(self, batch):
-        image, label = batch[0]
+        image = batch[0][0]
         mask_size = image.shape[1:3]
         masks = self.mask_gen.generate_params(len(batch), mask_size)
         for i in range(len(batch)):
