@@ -11,6 +11,8 @@ This repo is the PyTorch implementation of our paper:
 
 ## Usage
 
+🔥🔥 the 3D version of UCMT has been uploaded. 🔥🔥
+
 ### 0. Requirements
 The code is developed using Python 3.7 with PyTorch 1.11.0. 
 All experiments in our paper were conducted on a single NVIDIA Quadro RTX 6000 with 24G GPU memory.
