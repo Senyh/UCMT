@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from models.vnet import VNetorg
 from models.networkLib.segmodels import deeplabv3_resnet50, deeplabv3p_resnet50
 
 
@@ -221,6 +222,32 @@ class UNet(nn.Module):
         for t_param, t1_param, t2_param in zip(self.parameters(), teacher1.parameters(), teacher2.parameters()):
             t_param.data.mul_(ema_decay).add_(coefficient*(1-ema_decay), t1_param.data).add_((1-coefficient)*(1-ema_decay), t2_param.data)
 
+
+
+class VNet(nn.Module):
+    def __init__(self, in_channels=1, out_channels=1, normalization='batchnorm'):
+        super(VNet, self).__init__()
+        self.net = VNetorg(in_channels=in_channels, out_channels=out_channels, normalization=normalization)
+
+    def forward(self, x, perturbation=False):
+        x = self.net(x, perturbation)
+        return x
+
+    def detach_model(self):
+        for param in self.parameters():
+            param.detach_()
+
+    def ema_update(self, student, ema_decay, cur_step=None):
+        if cur_step is not None:
+            ema_decay = min(1 - 1 / (cur_step + 1), ema_decay)
+        for t_param, s_param in zip(self.parameters(), student.parameters()):
+            t_param.data.mul_(ema_decay).add_(1 - ema_decay, s_param.data)
+    
+    def weighted_update(self, teacher1, teacher2, coefficient=0.99, ema_decay=0.99, cur_step=None):
+        if cur_step is not None:
+            ema_decay = min(1 - 1 / (cur_step + 1), ema_decay)
+        for t_param, t1_param, t2_param in zip(self.parameters(), teacher1.parameters(), teacher2.parameters()):
+            t_param.data.mul_(ema_decay).add_(coefficient*(1-ema_decay), t1_param.data).add_((1-coefficient)*(1-ema_decay), t2_param.data)
 
 if __name__ == '__main__':
     import torch
