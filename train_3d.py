@@ -315,11 +315,11 @@ def main(is_debug=False):
             pred_u2A2_pseudo = torch.argmax(pred_u2A2_probs, dim=1) # 8 256 256
             pred_u2A2_conf = pred_u1A1_probs.max(dim=1)[0].clone()
             # supervised path
-            loss_s = (criterion_dsc(pred_s1_logits, label.squeeze(1).long()) + criterion_dsc(pred_s2_logits, label.squeeze(1).long())) / 2.
+            loss_s = (criterion_dsc(pred_s1_logits, label_umix.squeeze(1).long()) + criterion_dsc(pred_s2_logits, label_umix.squeeze(1).long())) / 2.
             # unsupervised path
             lambda_ = sigmoid_rampup(current=idx + len(pbar) * (epoch-1), rampup_length=len(pbar)*5)
             loss_x = (criterion_dsc(pred_u1A1_logits, pred_u2A2_pseudo.detach()) + criterion_dsc(pred_u2A2_logits, pred_u1A1_pseudo.detach())) / 2.
-            loss_u = (criterion_dsc(pred_u1A1_logits, pred_u_pseudo.detach()) + criterion_dsc(pred_u2A2_logits, pred_u_pseudo.detach())) / 2.
+            loss_u = (criterion_dsc(pred_u1A1_logits, pred_u_pseudo_umix.detach()) + criterion_dsc(pred_u2A2_logits, pred_u_pseudo_umix.detach())) / 2.
             loss = loss_s + loss_x * 0.1 * lambda_ + loss_u * 0.1 * lambda_
             loss.backward()
             optimizer1.step()
